@@ -1,5 +1,16 @@
-Code from the ReactJS Udemy course
--------------
+React-gulp-boilerplate
+=======
+A project template to jump-start React development
+
+
+Config
+-----
+Docs coming soon
+
+
+Examples
+------
+All from the React Udemy course
 
 build
 
