@@ -1,1 +1,0 @@
-{"version":3,"sources":["second.jsx"],"names":[],"mappings":";;AAAA,IAAI,OAAO,GAAG;;;;CAAuB,CAAC;;AAEtC,KAAK,CAAC,MAAM,CAAC,OAAO,EAAE,QAAQ,CAAC,cAAc,CAAC,UAAU,CAAC,CAAC,CAAC","file":"second.js","sourcesContent":["var element = <h3>I'm a big boss</h3>;\n\nReact.render(element, document.getElementById('big-boss'));"],"sourceRoot":"/source/"}

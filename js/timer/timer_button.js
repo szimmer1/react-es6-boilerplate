@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _base_component = require('../base_component');
+
+var _base_component2 = _interopRequireDefault(_base_component);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,46 +22,42 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Timer = (function (_React$Component) {
-    _inherits(Timer, _React$Component);
+var TimerButton = (function (_BaseComponent) {
+    _inherits(TimerButton, _BaseComponent);
 
-    function Timer() {
-        _classCallCheck(this, Timer);
+    function TimerButton(props) {
+        _classCallCheck(this, TimerButton);
 
-        return _possibleConstructorReturn(this, Object.getPrototypeOf(Timer).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(TimerButton).call(this, props));
+
+        _this.state = {
+            seconds: props.seconds
+        };
+
+        // bind methods
+        _this._bind('startTimer');
+        return _this;
     }
 
-    _createClass(Timer, [{
-        key: 'setInitialState',
-        value: function setInitialState() {
-            return {
-                count: 0
-            };
+    _createClass(TimerButton, [{
+        key: 'startTimer',
+        value: function startTimer() {
+            this.props.run(this.state.seconds);
         }
     }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                    'h2',
-                    null,
-                    'Timer'
-                ),
-                _react2.default.createElement(
-                    'h1',
-                    null,
-                    this.state.count
-                )
+                'button',
+                { onClick: this.startTimer },
+                this.state.seconds,
+                ' seconds'
             );
         }
     }]);
 
-    return Timer;
-})(_react2.default.Component);
+    return TimerButton;
+})(_base_component2.default);
 
-// https://github.com/babel/babel/issues/2694
-
-exports.default = Timer;
-//# sourceMappingURL=timer.js.map
+exports.default = TimerButton;
+//# sourceMappingURL=timer_button.js.map
