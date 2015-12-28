@@ -21,7 +21,7 @@ class Timer extends BaseComponent {
         clearInterval(this.state.intervalFn);
         var intFn = setInterval(() => {
             var left = this.state.left - 1;
-            if (!left) clearInterval(intFn);
+            if (left < 1) clearInterval(intFn);
             this.setState({ left: left });
         }, 1000);
 
@@ -35,14 +35,17 @@ class Timer extends BaseComponent {
         return (
             <div>
                 <h2>Timer</h2>
-                <TimerButton seconds={5} run={this.run}></TimerButton>
-                <TimerButton seconds={10} run={this.run}></TimerButton>
-                <TimerButton seconds={15} run={this.run}></TimerButton>
+                {this.props.times.map( (time) => {
+                    return <TimerButton seconds={time} run={this.run}></TimerButton>
+                })}
                 <TimerDisplay left={this.state.left}></TimerDisplay>
             </div>
         )
     }
 
+}
+Timer.propTypes = {
+    times: React.PropTypes.arrayOf(React.PropTypes.number).isRequired
 }
 
 // https://github.com/babel/babel/issues/2694

@@ -5,13 +5,13 @@ import Menu from './menu/menu';
 document.addEventListener('DOMContentLoaded', function() {
 
     ReactDOM.render(
-        <Timer></Timer>,
-        document.getElementById('timer')
+        <Menu items={['Home','Blog','Products','About']}></Menu>,
+        document.getElementById('menu')
     );
 
     ReactDOM.render(
-        <Menu items={['Home','Posts','Store','About','Contact']} initial="Home"></Menu>,
-        document.getElementById('menu')
-    )
+        <Timer times={[5,10,15]}></Timer>,
+        document.getElementById('timer')
+    );
 
 });

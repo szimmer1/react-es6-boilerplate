@@ -10,5 +10,5 @@ module.exports = {
     jsDest: 'js',
     jsDist: 'dist',
     jsDistFile: 'bundle.js',
-    allSrc: [jsSrc, jsxSrc, html]
+    allSrc: [jsSrc, jsxSrc]
 };

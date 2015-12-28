@@ -1,6 +1,5 @@
 import React from 'react';
 import BaseComponent from '../base_component';
-//import MenuItem from './menu_item';
 
 class Menu extends BaseComponent {
     constructor(props) {

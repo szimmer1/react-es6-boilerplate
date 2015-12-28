@@ -16,8 +16,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    _reactDom2.default.render(React.createElement(_timer2.default, null), document.getElementById('timer'));
+    _reactDom2.default.render(React.createElement(_menu2.default, { items: ['Home', 'Blog', 'Products', 'About'] }), document.getElementById('menu'));
 
-    _reactDom2.default.render(React.createElement(_menu2.default, { items: ['Home', 'Posts', 'Store', 'About', 'Contact'], initial: 'Home' }), document.getElementById('menu'));
+    _reactDom2.default.render(React.createElement(_timer2.default, { times: [5, 10, 15] }), document.getElementById('timer'));
 });
 //# sourceMappingURL=app.js.map

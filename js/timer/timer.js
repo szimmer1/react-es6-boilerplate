@@ -56,7 +56,7 @@ var Timer = (function (_BaseComponent) {
             clearInterval(this.state.intervalFn);
             var intFn = setInterval(function () {
                 var left = _this2.state.left - 1;
-                if (!left) clearInterval(intFn);
+                if (left < 1) clearInterval(intFn);
                 _this2.setState({ left: left });
             }, 1000);
 
@@ -68,6 +68,8 @@ var Timer = (function (_BaseComponent) {
     }, {
         key: 'render',
         value: function render() {
+            var _this3 = this;
+
             return _react2.default.createElement(
                 'div',
                 null,
@@ -76,9 +78,9 @@ var Timer = (function (_BaseComponent) {
                     null,
                     'Timer'
                 ),
-                _react2.default.createElement(_timer_button2.default, { seconds: 5, run: this.run }),
-                _react2.default.createElement(_timer_button2.default, { seconds: 10, run: this.run }),
-                _react2.default.createElement(_timer_button2.default, { seconds: 15, run: this.run }),
+                this.props.times.map(function (time) {
+                    return _react2.default.createElement(_timer_button2.default, { seconds: time, run: _this3.run });
+                }),
                 _react2.default.createElement(_timer_display2.default, { left: this.state.left })
             );
         }
@@ -87,7 +89,10 @@ var Timer = (function (_BaseComponent) {
     return Timer;
 })(_base_component2.default);
 
-// https://github.com/babel/babel/issues/2694
+Timer.propTypes = {
+    times: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.number).isRequired
+};
 
+// https://github.com/babel/babel/issues/2694
 exports.default = Timer;
 //# sourceMappingURL=timer.js.map

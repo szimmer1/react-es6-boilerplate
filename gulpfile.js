@@ -12,7 +12,7 @@ var path = require('path'),
     config = require('./config/gulp_conf');
 
 gulp.task('compile', function () {
-    return gulp.src(config.jsxSrcGlob)
+    return gulp.src(config.allSrc)
         .pipe(sourcemaps.init())
         .pipe(babel({
             presets: ['es2015']
